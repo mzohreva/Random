@@ -9,7 +9,6 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"time"
 )
 
 /* This program generates a random 128x128 image using random.org HTTP API */
@@ -61,7 +60,6 @@ func getRandomNumbers(count int, min, max int) ([]int, error) {
 		if err != nil {
 			return result, err
 		}
-		time.Sleep(5 * time.Second)
 	}
 	return result, nil
 }
