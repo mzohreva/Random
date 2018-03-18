@@ -74,8 +74,11 @@ func minimum(a, b int) int {
 }
 
 func makeRandomRequest(count int, min, max int, appendTo *[]int) error {
+	// Real server: "https://www.random.org/integers/"
+	// Mock server: "http://localhost:8080/integers/"
+	server := "https://www.random.org/integers/"
 	url := fmt.Sprintf("%s?num=%d&min=%d&max=%d&col=1&base=10&format=plain&rnd=new",
-		"https://www.random.org/integers/", count, min, max)
+		server, count, min, max)
 	resp, err := http.Get(url)
 	if err != nil {
 		return err
